@@ -13,6 +13,7 @@ class Visitor:
 
 
 
+
 class Ticket:
     """Class to represent a ticket to enter to the museum for an event"""
     def __init__(self, ticket_id, event_type, event_location, event_date, vistor, price):
@@ -33,3 +34,9 @@ class Ticket:
         self.event_date = event_date
         self.visitor = visitor
         self.price = price
+
+
+
+class ExhibitionTicket(Ticket):
+    """Class to represent a ticket for an exhibition"""
+    def __init__(
