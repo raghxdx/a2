@@ -1,0 +1,27 @@
+class Visitor:
+    """Class to represent a vistor to the museum"""
+    def __init__(self, visitor_id, demographics):
+        """
+        Initialize a visitor object 
+
+        parameters:
+            visitor_id (str): the ID of the visitor
+            demographics (str): the demographic information of the visitor
+        """
+        self.visitor_id = visitor_id
+        self.demographics = demographics
+
+
+
+class Ticket:
+    """Class to represent a ticket to enter to the museum for an event"""
+    def __init__(self, ticket_id, event_type, event_location, event_date, vistor, price):
+        """
+        Initialize a ticket object 
+
+        parameters:
+            ticket_id (str):
+            event_type (str):
+            event_location (str):
+            event_date (str):
+            visitor (Visitor):
