@@ -1,0 +1,28 @@
+class Artwork:
+    """Class to represent an artwork in museum"""
+    def __init__(self, title, artist, date_of_creation, historical_significance):
+        """
+        Initialize an Artwork object
+
+        parameters:
+            title (str): The title of the artwork
+            artist (str): The artist of the artwork
+            date_of_creation (str): The date of creation of the artwork
+            historical_significance (str): Historical significance of the artwork
+        """
+        self.title = title
+        self.artist = artist
+        self.date_of_creation = date_of_creation
+        self.historical_significance = historical_significance
+
+
+class ExhibitionLocation:
+    """Class to represent the location of an exhibition in the museum"""
+      def __init__(self, location_type):
+          """
+          Initalize an ExhibitionLocation object
+
+          parameters:
+              location_type (str): type of location (permanent_gallery, exhibition_hall, outdoor_space)
+          """
+          self.location_type = location_type
