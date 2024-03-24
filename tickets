@@ -1,0 +1,25 @@
+class TicketPricing:
+    """Class to represent the pricing details for tickets"""
+    def __init__(self, base_price):
+        """
+        Initialize a TicketPricing object
+
+        parameters:
+            base_price (float): the base price of tickets
+        """
+        self.base_price = base_price
+
+
+
+class PricingStrategy:
+    """Class to represent the pricing strategy for different visitor categories"""
+  def __init__(self, category, ticket_pricing):
+        """
+        Initialize a PricingStrategy object
+
+        parameters:
+            category (str): the category of visitors (adult, child, teacher_student, senior, group, special_event).
+            ticket_pricing (TicketPricing): the pricing details for the category
+        """
+        self.category = category
+        self.ticket_pricing = ticket_pricing
