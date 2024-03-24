@@ -74,3 +74,22 @@ class TourTicket(Ticket):
         super().__init__(ticket_id, 'Tour', event_location, event_date, visitor, price)
         self.guide = guide
         self.group_size = group_size
+
+
+
+class SpecialEventTicket(Ticket):
+    """Class to represent a ticket for a special event"""
+    def __init__(self, ticket_id, event_location, event_date, visitor, price, special_event_type):
+        """
+        Initialize a SpecialEventTicket object
+
+       parameters:
+            ticket_id (str):the ID of the ticket
+            event_location (str): the location of the special event
+            event_date (str): the date of the special event
+            visitor (Visitor): the visitor associated with the ticket
+            price (float): the price of the ticket
+            special_event_type (str): the type of special event
+        """
+        super().__init__(ticket_id, 'Special Event', event_location, event_date, visitor, price)
+        self.special_event_type = special_event_type
