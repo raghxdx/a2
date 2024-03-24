@@ -20,8 +20,10 @@ class Ticket:
         Initialize a ticket object 
 
         parameters:
-            ticket_id (str):
-            event_type (str):
-            event_location (str):
-            event_date (str):
-            visitor (Visitor):
+            ticket_id (str): the ID of the ticket
+            event_type (str): the type of event (tour, exhibition)
+            event_location (str): the location of the event 
+            event_date (str): the date of the event taking place in museum
+            visitor (Visitor): the visitor associated with the ticket
+            price (float): price of ticket
+        """
