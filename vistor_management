@@ -39,4 +39,38 @@ class Ticket:
 
 class ExhibitionTicket(Ticket):
     """Class to represent a ticket for an exhibition"""
-    def __init__(
+    def __init__(self, ticket_id, event_location, event_date, visitor, price, exhibition_duration):
+        """
+        Initialize an ExhibitionTicket object
+
+        parameters:
+            ticket_id (str): the ID of the ticket
+            event_location (str): the location of the event 
+            event_date (str): the date of the event taking place in museum
+            visitor (Visitor): the visitor associated with the ticket
+            price (float): price of ticket
+            exhibition_duration (str): the duration of the exhibition
+        """
+        super().__init__(ticket_id, 'Exhibition', event_location, event_date, visitor, price)
+        self.exhibition_duration = exhibition_duration
+
+
+
+class TourTicket(Ticket):
+    """Class to represent a ticket for a tour"""
+    def __init__(self, ticket_id, event_location, event_date, visitor, price, guide, group_size):
+        """
+        Initialize a TourTicket object
+
+        parameters:
+            ticket_id (str): the ID of the ticket
+            event_location (str): the location of the tour
+            event_date (str): the date of the tour
+            visitor (Visitor): the visitor associated with the ticket
+            price (float): the price of the ticket
+            guide (str): the guide for the tour
+            group_size (int): the size of the tour group
+        """
+        super().__init__(ticket_id, 'Tour', event_location, event_date, visitor, price)
+        self.guide = guide
+        self.group_size = group_size
