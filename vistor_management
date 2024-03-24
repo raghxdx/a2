@@ -27,3 +27,9 @@ class Ticket:
             visitor (Visitor): the visitor associated with the ticket
             price (float): price of ticket
         """
+        self.ticket_id = ticket_id
+        self.event_type = event_type
+        self.event_location = event_location
+        self.event_date = event_date
+        self.visitor = visitor
+        self.price = price
