@@ -21,7 +21,7 @@ class Ticket:
 
         parameters:
             ticket_id (str): the ID of the ticket
-            event_type (str): the type of event (tour, exhibition)
+            event_type (str): the type of event (tour, exhibition, special event)
             event_location (str): the location of the event 
             event_date (str): the date of the event taking place in museum
             visitor (Visitor): the visitor associated with the ticket
