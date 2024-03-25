@@ -1,1 +1,6 @@
+#we start by importing the needed class from our other files we created within this repository 
+from artwork_management import Artwork
+from visitors_management import Visitor
+from tickets import TicketPricing, PricingStrategy
 
+#we start for the test case for the artwork managment 
