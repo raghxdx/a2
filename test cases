@@ -4,3 +4,70 @@ from visitors_management import Visitor
 from tickets import TicketPricing, PricingStrategy
 
 #we start for the test case for the artwork managment 
+def test_add_new_art():
+#we then create an instance for the class Artwork and include all the attributes of this instance
+    artwork1 = Artwork("Mona Lisa", "Leonardo da Vinci", "1503–1506", "Renaissance masterpiece")
+    artwork2 = Artwork("Starry Night", "Vincent van Gogh", "1889", "Post-impressionist masterpiece")
+
+#we create assert statements to help vertify the adding of the above arts
+    assert artwork1.title == "Mona Lisa", "Failed: Title of artwork1 does not match expected"
+    assert artwork2.title == "Starry Night", "Failed: Title of artwork2 does not match expected"
+
+#then we print the details of the new added arts
+    print("\nNew artworks added:")
+    print("1. Title:", artwork1.title)
+    print("   Artist:", artwork1.artist)
+    print("   Date of Creation:", artwork1.date_of_creation)
+    print("   Historical Significance:", artwork1.historical_significance)
+    print("2. Title:", artwork2.title)
+    print("   Artist:", artwork2.artist)
+    print("   Date of Creation:", artwork2.date_of_creation)
+    print("   Historical Significance:", artwork2.historical_significance)
+
+#we then print the results of this test case
+    print("Test case 'test_add_new_art' passed successfully.")
+
+
+
+#we create the second test case for the visitor management
+
+def test_create_visitor():
+#we create an instance for the visitor class with its special ID and demographics
+    visitor = Visitor("V123", "Adult")
+    assert visitor.visitor_id == "V123"
+    assert visitor.demographics == "Adult"
+#then we output the visitors details 
+    print("\nVisitor ID:", visitor.visitor_id)
+    print("Demographics:", visitor.demographics)
+    print("Test case 'test_create_visitor' passed successfully.")
+
+
+
+#we then create the test case for the tickets 
+def test_ticket_pricing():
+#we create an instance for the TicketPricing class with its special prices 
+    ticket_pricing = TicketPricing(20.0)
+    assert ticket_pricing.base_price == 20.0
+
+#we then print the prices for the ticket pricing 
+    print("\nTicketPricing: Price =", ticket_pricing.base_price)
+    print("Test case 'test_ticket_pricing' passed successfully.")
+
+def test_pricing_strategy():
+#we create an instance for the TicketPricing class with its special prices 
+    ticket_pricing = TicketPricing(20.0)
+
+#we create an instance for the PricingStrategy class with the specficed visiotr category and with the price of that ticket
+    pricing_strategy = PricingStrategy("Adult", ticket_pricing)
+    assert pricing_strategy.category == "Adult"
+    assert pricing_strategy.ticket_pricing == ticket_pricing
+#we print the category specifed and the base price of the pricing strategy
+    print("\nPricingStrategy: Category =", pricing_strategy.category, "| TicketPricing =", pricing_strategy.ticket_pricing.base_price)
+    print("Test case 'test_pricing_strategy' passed successfully.")
+
+#then we call all the test functions above
+test_add_new_art()
+test_create_visitor()
+test_ticket_pricing()
+test_pricing_strategy()
+
