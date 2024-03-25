@@ -7,7 +7,7 @@ class TicketPricing:
         parameters:
             base_price (float): the base price of tickets
         """
-        self.base_price = base_price
+        self.base_price = base_price #we assign the given base price for 'base_price' attribute of the class TicketPricing
 
 
 
@@ -21,5 +21,5 @@ class PricingStrategy:
             category (str): the category of visitors (adult, child, teacher_student, senior, group, special_event).
             ticket_pricing (TicketPricing): the pricing details for the category
         """
-        self.category = category
-        self.ticket_pricing = ticket_pricing
+        self.category = category #we assign the given category to the 'category' attribute  of the PricingStrategy class
+        self.ticket_pricing = ticket_pricing #we assign the ticket pricing to the 'ticket_pricing'  attribute  of the PricingStrategy class
