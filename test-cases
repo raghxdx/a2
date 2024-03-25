@@ -1,1 +1,57 @@
+from artwork_management import Artwork, ExhibitionLocation
+from visitor_management import Visitor, ExhibitionTicket, TourTicket, SpecialEventTicket
+from tickets import TicketPricing, PricingStrategy
 
+#we create a test case for adding new art to the museum
+
+def test_add_new_art():
+    artwork1 = Artwork("Mona Lisa", "Leonardo da Vinci", "1503–1506", "Renaissance masterpiece")
+    artwork2 = Artwork("Starry Night", "Vincent van Gogh", "1889", "Post-impressionist masterpiece")
+#we assert the statements to verify the adding of the art
+    assert artwork1.title == "Mona Lisa"
+    assert artwork2.title == "Starry Night"
+
+
+#we create a test case for opening a new exhibition
+def test_open_new_exhibition():
+    exhibition_location = ExhibitionLocation("exhibition_hall")
+    exhibition_ticket = ExhibitionTicket("123456", exhibition_location, "2024-04-01", Visitor("V001", "Adult"), 50.00, "1 month")
+
+    #we assert the statements to verify the opening of a new exhibition
+    assert exhibition_ticket.event_location.location_type == "exhibition_hall"
+    assert exhibition_ticket.event_date == "2024-04-01"
+
+
+#we create a test case for purchasing tickets
+def test_purchase_tickets():
+    pricing_strategy = PricingStrategy("adult", TicketPricing(50.00))
+    exhibition_location = ExhibitionLocation("exhibition_hall")
+    exhibition_ticket = ExhibitionTicket("123456", exhibition_location, "2024-04-01", Visitor("V001", "Adult"), 50.00, "1 month")
+
+    #we assert the statements to verify the purchase of the tickets
+    assert exhibition_ticket.event_type == "Exhibition"
+    assert exhibition_ticket.price == 50.00
+
+
+#we create a test case for displaying payment receipts
+def test_display_payment_receipts():
+    pricing_strategy = PricingStrategy("adult", TicketPricing(50.00))
+    exhibition_location = ExhibitionLocation("exhibition_hall")
+    exhibition_ticket = ExhibitionTicket("123456", exhibition_location, "2024-04-01", Visitor("V001", "Adult"), 50.00, "1 month")
+
+
+#we display the recipt of the payments
+    print("Payment Receipt:")
+    print("ticket ID:", exhibition_ticket.ticket_id)
+    print("event Type:", exhibition_ticket.event_type)
+    print("event Location:", exhibition_ticket.event_location.location_type)
+    print("event Date:", exhibition_ticket.event_date)
+    print("visitor ID:", exhibition_ticket.visitor.visitor_id)
+    print("price:", exhibition_ticket.price)
+
+#we then execute the test cases
+if __name__ == "__main__":
+    test_add_new_art()
+    test_open_new_exhibition()
+    test_purchase_tickets()
+    test_display_payment_receipts()
