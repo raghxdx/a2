@@ -8,8 +8,8 @@ class Visitor:
             visitor_id (str): the ID of the visitor
             demographics (str): the demographic information of the visitor
         """
-        self.visitor_id = visitor_id
-        self.demographics = demographics
+        self.visitor_id = visitor_id #we assign the given id visitor to the 'visitor_id' attribute of the  class Visitor
+        self.demographics = demographics #we do the same for the attribute 'demographics' of the class Visitor
 
 
 
@@ -21,8 +21,8 @@ class Ticket:
         Initialize a ticket object 
 
         parameters:
-            ticket_id (str): the ID of the ticket
-            event_type (str): the type of event (tour, exhibition, special event)
+            ticket_id (str): the ID of the ticket #we assignt the given id ticket to the 'ticket_id' attribute for the class Ticket
+            event_type (str): the type of event (tour, exhibition, special event) #we do the same for the rest of the  attributes for the class Ticket
             event_location (str): the location of the event 
             event_date (str): the date of the event taking place in museum
             visitor (Visitor): the visitor associated with the ticket
@@ -51,8 +51,8 @@ class ExhibitionTicket(Ticket):
             price (float): price of ticket
             exhibition_duration (str): the duration of the exhibition
         """
-        super().__init__(ticket_id, 'Exhibition', event_location, event_date, visitor, price)
-        self.exhibition_duration = exhibition_duration
+        super().__init__(ticket_id, 'Exhibition', event_location, event_date, visitor, price) #we call the constructor of the parent class Ticket
+        self.exhibition_duration = exhibition_duration #then we assign the given exhibition duration for the 'exhibition_duration' attribute for the class ExhibitionTicket
 
 
 
@@ -71,9 +71,9 @@ class TourTicket(Ticket):
             guide (str): the guide for the tour
             group_size (int): the size of the tour group
         """
-        super().__init__(ticket_id, 'Tour', event_location, event_date, visitor, price)
-        self.guide = guide
-        self.group_size = group_size
+        super().__init__(ticket_id, 'Tour', event_location, event_date, visitor, price) #we call the constructor of the parent class Ticket
+        self.guide = guide #we assign the given guide to the 'guide' attribute for the TourTicket class 
+        self.group_size = group_size #we do the same for the attribute 'group_size'
 
 
 
@@ -91,5 +91,5 @@ class SpecialEventTicket(Ticket):
             price (float): the price of the ticket
             special_event_type (str): the type of special event
         """
-        super().__init__(ticket_id, 'Special Event', event_location, event_date, visitor, price)
-        self.special_event_type = special_event_type
+        super().__init__(ticket_id, 'Special Event', event_location, event_date, visitor, price) #we call the constructor of the parent class Ticket
+        self.special_event_type = special_event_type #we assign the given special event type  to the 'special_event_type' attribute for the SpecialEventTicket class
