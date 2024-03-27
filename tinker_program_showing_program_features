@@ -1,2 +1,6 @@
+#we start by importaing our necessary libaries 
 import tkinter as tk
 from tkinter import messagebox
+
+#we define a function to add new artwork
+def add_new_art():
