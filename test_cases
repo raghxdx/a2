@@ -65,4 +65,3 @@ test_add_new_art()
 test_create_visitor()
 test_ticket_pricing()
 test_pricing_strategy()
-
