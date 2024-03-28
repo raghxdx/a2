@@ -4,3 +4,50 @@ from tkinter import messagebox
 
 #we define a function to add new artwork
 def add_new_art():
+#then we create instances of the class Artwork with all its attributes included for each instance we create
+    artwork1 = Artwork("Mona Lisa", "Leonardo da Vinci", "1503–1506", "Renaissance masterpiece")
+    artwork2 = Artwork("Starry Night", "Vincent van Gogh", "1889", "Post-impressionist masterpiece")
+
+#we show the message box with the details of the both new arts added 
+    messagebox.showinfo("New Artworks Added", 
+                        f"1. Title: {artwork1.title}\n   Artist: {artwork1.artist}\n   Date of Creation: {artwork1.date_of_creation}\n   Historical Significance: {artwork1.historical_significance}\n"
+                        f"2. Title: {artwork2.title}\n   Artist: {artwork2.artist}\n   Date of Creation: {artwork2.date_of_creation}\n   Historical Significance: {artwork2.historical_significance}")
+
+
+#we define a function to create a new visitor
+def create_visitor():
+#we create instances of the class visitor with its unqiue ID and demographics
+    visitor = Visitor("V123", "Adult")
+#then we show the message box with the visitor details
+    messagebox.showinfo("Visitor Details", f"Visitor ID: {visitor.visitor_id}\nDemographics: {visitor.demographics}")
+
+
+#we define a function to test the pricing strategy
+def test_pricing_strategy():
+#we create an instance of the class TicketPricing with a specifc base price
+    ticket_pricing = TicketPricing(20.0)
+#we create an instance the class TicketPricing with a certain visitor category and ticket pricing
+    pricing_strategy = PricingStrategy("Adult", ticket_pricing)
+#we show the message box with thr pricing strategy details
+    messagebox.showinfo("Pricing Strategy", f"Category: {pricing_strategy.category}\nTicket Pricing: {pricing_strategy.ticket_pricing.base_price}")
+
+
+#we create a main window 
+root = tk.Tk() #this  creates the main tkinter window
+root.title("showcasing the programs features ") #we give our main widnow a title
+
+
+#we create buttons for the test cases we made
+add_art_button = tk.Button(root, text="Add New Art", command=add_new_art)   #this line will create a button to add the new artwork
+create_visitor_button = tk.Button(root, text="Create Visitor", command=create_visitor)   #this line will create a button to create a new visitor
+test_pricing_button = tk.Button(root, text="Test Ticket Pricing", command=test_ticket_pricing)   #this line will create a button to test the ticket pricing
+test_strategy_button = tk.Button(root, text="Test Pricing Strategy", command=test_pricing_strategy)   #this line will create a button to test the pricing strategy
+
+#then we pack each button into the window
+add_art_button.pack()           #we pack the add_art_button into the window
+create_visitor_button.pack()    #we pack the create_visitor_button into the window
+test_pricing_button.pack()      #we pack the test_pricing_button into the window
+test_strategy_button.pack()     #we pack the test_strategy_button into the window
+
+#finally we return to the GUI and start the loop to show the GUI and start user interactions
+root.mainloop() 
