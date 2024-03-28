@@ -5,10 +5,10 @@ class Artwork:
         Initialize an Artwork object
 
         parameters:
-            title (str): The title of the artwork
-            artist (str): The artist of the artwork
-            date_of_creation (str): The date of creation of the artwork
-            historical_significance (str): Historical significance of the artwork
+            title (str): the title of the artwork
+            artist (str): tne artist of the artwork
+            date_of_creation (str): the date of creation of the artwork
+            historical_significance (str): the historical significance of the artwork
         """
         self.title = title #we assign the given title to the 'title' attribute of the class Artwork
         self.artist = artist #we do the same for the rest of the attributes of the class Atrwork
