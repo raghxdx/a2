@@ -1,4 +1,72 @@
-#we start by importaing our necessary libaries 
+#we start by re-writing all of our class codes 
+class Artwork:
+    def __init__(self, title, artist, date_of_creation, historical_significance):
+        self.title = title
+        self.artist = artist
+        self.date_of_creation = date_of_creation
+        self.historical_significance = historical_significance
+
+
+class ExhibitionLocation:
+    def __init__(self, location_type):
+        self.location_type = location_type
+
+
+
+class Visitor:
+    def __init__(self, visitor_id, demographics):
+
+        self.visitor_id = visitor_id
+        self.demographics = demographics
+
+
+class Ticket:
+    def __init__(self, ticket_id, event_type, event_location, event_date, visitor, price):
+
+        self.ticket_id = ticket_id
+        self.event_type = event_type
+        self.event_location = event_location
+        self.event_date = event_date
+        self.visitor = visitor
+        self.price = price
+
+
+class ExhibitionTicket(Ticket):
+    def __init__(self, ticket_id, event_location, event_date, visitor, price, exhibition_duration):
+
+        super().__init__(ticket_id, 'Exhibition', event_location, event_date, visitor, price)
+        self.exhibition_duration = exhibition_duration
+
+
+class TourTicket(Ticket):
+    def __init__(self, ticket_id, event_location, event_date, visitor, price, guide, group_size):
+
+        super().__init__(ticket_id, 'Tour', event_location, event_date, visitor, price)
+        self.guide = guide
+        self.group_size = group_size
+
+
+class SpecialEventTicket(Ticket):
+    def __init__(self, ticket_id, event_location, event_date, visitor, price, special_event_type):
+
+        super().__init__(ticket_id, 'Special Event', event_location, event_date, visitor, price)
+        self.special_event_type = special_event_type
+
+class TicketPricing:
+    def __init__(self, base_price):
+
+        self.base_price = base_price
+
+
+class PricingStrategy:
+    def __init__(self, category, ticket_pricing):
+        
+        self.category = category
+        self.ticket_pricing = ticket_pricing
+
+
+
+#then we beign by importaing our necessary libaries
 import tkinter as tk
 from tkinter import messagebox
 
@@ -8,11 +76,10 @@ def add_new_art():
     artwork1 = Artwork("Mona Lisa", "Leonardo da Vinci", "1503–1506", "Renaissance masterpiece")
     artwork2 = Artwork("Starry Night", "Vincent van Gogh", "1889", "Post-impressionist masterpiece")
 
-#we show the message box with the details of the both new arts added 
-    messagebox.showinfo("New Artworks Added", 
+#we show the message box with the details of the both new arts added
+    messagebox.showinfo("New Artworks Added",
                         f"1. Title: {artwork1.title}\n   Artist: {artwork1.artist}\n   Date of Creation: {artwork1.date_of_creation}\n   Historical Significance: {artwork1.historical_significance}\n"
                         f"2. Title: {artwork2.title}\n   Artist: {artwork2.artist}\n   Date of Creation: {artwork2.date_of_creation}\n   Historical Significance: {artwork2.historical_significance}")
-
 
 #we define a function to create a new visitor
 def create_visitor():
@@ -20,7 +87,6 @@ def create_visitor():
     visitor = Visitor("V123", "Adult")
 #then we show the message box with the visitor details
     messagebox.showinfo("Visitor Details", f"Visitor ID: {visitor.visitor_id}\nDemographics: {visitor.demographics}")
-
 
 #we define a function to test the pricing strategy
 def test_pricing_strategy():
@@ -32,10 +98,21 @@ def test_pricing_strategy():
     messagebox.showinfo("Pricing Strategy", f"Category: {pricing_strategy.category}\nTicket Pricing: {pricing_strategy.ticket_pricing.base_price}")
 
 
-#we create a main window 
+
+#this is the function to test ticket pricing
+def test_ticket_pricing():
+    #then we create an instance of TicketPricing class with a specified base price
+    ticket_pricing = TicketPricing(20.0)
+
+    #then we show the message box with ticket pricing details
+    messagebox.showinfo("Ticket Pricing", f"Base Price: {ticket_pricing.base_price}")
+
+
+
+
+#we create a main window
 root = tk.Tk() #this  creates the main tkinter window
 root.title("showcasing the programs features ") #we give our main widnow a title
-
 
 #we create buttons for the test cases we made
 add_art_button = tk.Button(root, text="Add New Art", command=add_new_art)   #this line will create a button to add the new artwork
@@ -50,4 +127,4 @@ test_pricing_button.pack()      #we pack the test_pricing_button into the window
 test_strategy_button.pack()     #we pack the test_strategy_button into the window
 
 #finally we return to the GUI and start the loop to show the GUI and start user interactions
-root.mainloop() 
+root.mainloop()
